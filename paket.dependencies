@@ -1,0 +1,15 @@
+source https://api.nuget.org/v3/index.json
+frameworks: netstandard2.0
+
+nuget FSharp.Core 7.0.0
+nuget Newtonsoft.Json 11.0.2
+nuget NetTopologySuite.IO.GeoJSON 2.0.4
+nuget NetTopologySuite.Features 2.0.0
+nuget NetTopologySuite 2.0.0
+nuget FSharp.Data 4.2.8
+nuget Thoth.Json.Net 10.0.0
+nuget System.Text.Json 7.0.1
+# These lines are used by Paket to get the latest version of the Type Provider SDK files
+github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fsi
+github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fs
+
