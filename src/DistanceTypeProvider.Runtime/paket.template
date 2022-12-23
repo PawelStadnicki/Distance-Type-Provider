@@ -1,0 +1,40 @@
+type file
+id DistanceTypeProvider
+authors
+    Pawel Stadnicki
+owners
+    Pawel Stadnicki
+license
+   
+    MIT
+requireLicenseAcceptance
+    false
+tags
+    F# fsharp typeproviders DistanceTypeProvider
+summary
+    This library is for the .NET platform implementing DistanceTypeProvider.
+description
+    This library is for the .NET platform implementing DistanceTypeProvider.
+tags
+    F# fsharp typeproviders
+files
+    bin/Release/netstandard2.0/DistanceTypeProvider.Runtime.* ==> lib/netstandard2.0
+    bin/Release/netstandard2.0/*.dll ==> typeproviders/fsharp41/netstandard2.0
+
+    ../../packages/Newtonsoft.Json/lib/netstandard2.0/Newtonsoft.Json.dll ==> typeproviders/fsharp41/netstandard2.0
+    ../../packages/NetTopologySuite.IO.GeoJSON/lib/netstandard2.0/NetTopologySuite.IO.GeoJSON.dll ==> typeproviders/fsharp41/netstandard2.0
+    ../../packages/FSharp.Data/lib/netstandard2.0/FSharp.Data.dll ==> typeproviders/fsharp41/netstandard2.0
+    ../../packages/NetTopologySuite/lib/netstandard2.0/NetTopologySuite.dll ==> typeproviders/fsharp41/netstandard2.0
+    ../../packages/NetTopologySuite.Features/lib/netstandard2.0/NetTopologySuite.Features.dll ==> typeproviders/fsharp41/netstandard2.0
+    ../../packages/Thoth.Json.Net/lib/netstandard2.0/Thoth.Json.Net.dll ==> typeproviders/fsharp41/netstandard2.0
+references
+    DistanceTypeProvider.Runtime.dll
+dependencies
+  FSharp.Core >= LOCKEDVERSION
+  Thoth.Json.Net >= 10.0.0
+  Newtonsoft.Json >= 11.0.2
+  NetTopologySuite.IO.GeoJSON >= 2.0.4
+  FSharp.Data >= 4.2.8
+  System.Text.Json >= 7.0.1
+
+  framework: netstandard2.0

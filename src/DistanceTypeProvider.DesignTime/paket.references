@@ -1,0 +1,13 @@
+File:ProvidedTypes.fsi
+File:ProvidedTypes.fs
+
+FSharp.Core
+
+Newtonsoft.Json
+NetTopologySuite.IO.GeoJSON
+NetTopologySuite
+NetTopologySuite.Features
+Thoth.Json.Net
+System.Text.Json
+FSharp.Data
+
