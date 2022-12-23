@@ -1,0 +1,70 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":null,"items":[{"name":"csharp","languageName":"C#","aliases":["c#","cs"]},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"html","languageName":"HTML"},{"name":"sql","languageName":"SQL"},{"name":"kql","languageName":"KQL"},{"name":"mermaid","languageName":"Mermaid"},{"name":"httpRequest","languageName":"http"},{"name":"value"}]}}
+
+#!fsharp
+
+#r "nuget:DistanceTypeProvider, 0.1.0"
+
+#!fsharp
+
+type F1 = DistanceProvider.GeojsonFile<"Formula1.geojson", sourceAttrName = "location">
+
+#!fsharp
+
+F1.From.Baku.To.Monza
+
+#!fsharp
+
+type MyLife = DistanceProvider.GeojsonFile<"MyLife.geojson">
+
+#!fsharp
+
+let bestPlaceToLive (life: MyLife) =
+    life.AvoidThisPlace / (life.Home + life.Work)
+
+#!fsharp
+
+[
+    -0.16489448148843167, 51.53000520916163
+    -0.09318530602652686, 51.499693573965516
+    -0.022152632220354462, 51.5076944368347
+    -0.06883124643624683, 51.526217357816336
+    -0.06206622988261756, 51.47104739534288
+    -0.12193662637662328, 51.47020458823462
+] |> List.map ( MyLife >> bestPlaceToLive)
+
+#!fsharp
+
+[<Literal>]
+let mapboxKey = "[your mapbox token]"
+
+#!fsharp
+
+type MyLife = DistanceProvider.GeojsonFile<"MyLife.geojson", mapboxKey>
+
+#!fsharp
+
+MyLife.From.Home.DrivingTo.Work.Distance
+
+#!fsharp
+
+MyLife.From.Home.CyclingTo.Work.Distance
+
+#!fsharp
+
+MyLife.From.Home.WalkingTo.Work.Distance
+
+#!fsharp
+
+[
+    MyLife.From.Home.Details
+    MyLife.From.FavoriteCafe.Details
+    MyLife.From.Kindergarten.Details
+    { Name = "Best Friend"; Location = -0.016969787469491848, 51.490566444942544 }
+]
+|> MyLife.Directions.WalkingTo
+
+#!fsharp
+
+MyLife.From.Home.DistanceTo(180.0, 51.5)
